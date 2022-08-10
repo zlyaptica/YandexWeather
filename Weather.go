@@ -23,7 +23,7 @@ func NewClient(apikey string) *Client {
 
 // GetWeatherInfo Get yandex weather method
 func (c Client) GetWeatherInfo(client *Client, lat, lon float64) (Response, error) {
-	requestURL := fmt.Sprintf("https://api.weather.yandex.ru/v2/forecast?lat=%f&lon=%f", lat, lon)
+	requestURL := fmt.Sprintf("https://api.weather.yandex.ru/v2/informers?lat=%f&lon=%f&lang=ru_RU", lat, lon)
 	req, err := http.NewRequest("GET", requestURL, nil)
 	if err != nil {
 		return Response{}, err
